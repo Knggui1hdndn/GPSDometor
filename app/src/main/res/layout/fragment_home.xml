@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:weightSum="10">
+    <!--        app:sv_withTremble="false"-->
+    <fragment
+        android:name="com.example.gps.ui.FragmentSignal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:id="@+id/signal"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+
+        android:layout_weight="6">
+
+        <com.github.anastr.speedviewlib.AwesomeSpeedometer
+            android:id="@+id/speed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"
+            app:sv_indicatorColor="@color/color_3"
+            app:sv_maxSpeed="280"
+             app:sv_minSpeed="0"
+            app:sv_speedTextPosition="CENTER"
+            app:sv_speedometerMode="NORMAL"
+            app:sv_trianglesColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/imgReset"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="30dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/baseline_refresh_24" />
+
+        <ImageView
+            android:id="@+id/imgRotateScreen"
+            style="@style/BackgroundTintImg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="start|end"
+            android:layout_margin="30dp"
+            android:background="@drawable/img" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+         android:gravity="bottom"
+        android:orientation="vertical">
+
+
+        <fragment
+            android:id="@+id/frag"
+            android:name="com.example.gps.ui.ParameterFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>
